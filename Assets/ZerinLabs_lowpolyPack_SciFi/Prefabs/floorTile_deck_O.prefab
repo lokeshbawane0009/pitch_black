@@ -9,6 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -4216859302048453862, guid: 5fadf75dd10d3574c956d8a472421dc6,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5fadf75dd10d3574c956d8a472421dc6,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -45
       objectReference: {fileID: 0}
@@ -24,6 +29,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5fadf75dd10d3574c956d8a472421dc6,
         type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 5fadf75dd10d3574c956d8a472421dc6,
+        type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.000000021855694
       objectReference: {fileID: 0}
@@ -36,16 +46,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 5fadf75dd10d3574c956d8a472421dc6,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 5fadf75dd10d3574c956d8a472421dc6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5fadf75dd10d3574c956d8a472421dc6,
         type: 3}
@@ -79,3 +79,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fadf75dd10d3574c956d8a472421dc6, type: 3}
+--- !u!1 &5445133962563980069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 5fadf75dd10d3574c956d8a472421dc6,
+    type: 3}
+  m_PrefabInstance: {fileID: 4085025906497016364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &-5027478509155549853
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5445133962563980069}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0000005, y: 0.15316917, z: 2.0000012}
+  m_Center: {x: -0.000000059604645, y: -0.048416026, z: -0.00000047683716}
