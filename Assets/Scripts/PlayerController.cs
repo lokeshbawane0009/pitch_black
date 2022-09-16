@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (locomotion != null)
         {

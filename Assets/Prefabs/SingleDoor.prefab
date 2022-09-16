@@ -65,6 +65,7 @@ MonoBehaviour:
   doorTop: {fileID: 705939525715535824}
   doorBot: {fileID: 7944554384275715187}
   offset: 1.5
+  ease: 20
 --- !u!1001 &2427576444016745765
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,8 +13,8 @@ public class DoorController : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
-            doorTop.DOLocalMoveY(doorTop.position.y + offset, 1f).SetEase(ease);
-            doorBot.DOLocalMoveY(doorBot.position.y - offset, 1f).SetEase(ease);
+            doorTop.DOLocalMoveY(doorTop.localPosition.y + offset, 1f).SetEase(ease);
+            doorBot.DOLocalMoveY(doorBot.localPosition.y - offset, 1f).SetEase(ease);
         }
     }
 

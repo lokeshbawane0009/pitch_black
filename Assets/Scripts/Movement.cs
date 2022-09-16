@@ -6,9 +6,14 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] float horizontal, vertical;
+    [SerializeField] CharacterController player_character_controller;
     [SerializeField] Rigidbody player_rb;
-    [SerializeField] float speed;
+    [SerializeField] float walk_speed,run_speed;
     [SerializeField] new Transform camera;
+    [SerializeField] Vector3 movementVector;
+    [SerializeField] bool crouch;
+
+    float speed;
 
     private void OnEnable()
     {
@@ -26,20 +31,56 @@ public class Movement : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
+        Vector3 movementDirection = camera.transform.right*horizontal+camera.transform.forward*vertical;
 
-        Vector3 inputDirection = new Vector3(horizontal, 0, vertical);
-        Vector3 movementDirection = camera.transform.right*inputDirection.x+camera.transform.forward*inputDirection.z;
-
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (player_character_controller.isGrounded && player_character_controller.velocity.y < 0)
         {
-            speed = 150f;
+            print("CharacterController is grounded");
+            player_character_controller.Move(new Vector3(0, 0, 0));
         }
         else
         {
-            speed = 100f;
+            player_character_controller.Move(new Vector3(0, -9.8f * Time.deltaTime, 0));
         }
 
-        if(horizontal!=0 || vertical!=0)
-            player_rb.velocity = new Vector3(movementDirection.x * speed * Time.deltaTime,player_rb.velocity.y,movementDirection.z*speed*Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            crouch = !crouch;
+
+            if(!crouch)
+                player_character_controller.Move(new Vector3(0, 0.15f, 0));
+        }
+
+        if (crouch)
+        {
+            player_character_controller.height = 0.5f;
+        }
+        else
+        {
+            player_character_controller.height = 1.5f;
+        }
+
+
+        //If input then Move
+        if (horizontal != 0 || vertical != 0)
+        {
+            //Set speed value;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                speed = run_speed;
+            }
+            else
+            {
+                speed = walk_speed;
+            }
+
+            if (player_character_controller.isGrounded)
+            {
+                movementVector = new Vector3(movementDirection.x * speed * Time.deltaTime, 0, movementDirection.z * speed * Time.deltaTime);
+                player_character_controller.Move(movementVector);
+            }
+            //player_rb.velocity = new Vector3(movementDirection.x * speed * Time.deltaTime, player_rb.velocity.y, movementDirection.z * speed * Time.deltaTime);
+        }
+
     }
 }
