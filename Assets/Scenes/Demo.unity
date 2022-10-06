@@ -47329,9 +47329,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -83474,6 +83474,8 @@ MonoBehaviour:
   camera: {fileID: 0}
   movementVector: {x: 0, y: 0, z: 0}
   crouch: 0
+  jumpHeight: 1
+  gravityValue: -9.8
 --- !u!143 &2079501257
 CharacterController:
   m_ObjectHideFlags: 0

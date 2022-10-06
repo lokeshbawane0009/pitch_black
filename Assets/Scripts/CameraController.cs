@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
 
         yRotation += mouseX;
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90, 90);
+        xRotation = Mathf.Clamp(xRotation, -90, 70);
 
         camera.transform.eulerAngles = new Vector3(xRotation, yRotation, 0.0f);
     }
