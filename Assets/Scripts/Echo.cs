@@ -18,7 +18,7 @@ public class Echo : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            GameObject clone =Instantiate(echoObject, parent);
+            GameObject clone =Instantiate(echoObject, parent,false);
             clone.transform.DOScale(scale, time).OnComplete(()=> Destroy(clone.gameObject));
 
         }
